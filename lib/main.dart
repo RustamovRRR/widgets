@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
       title: "My Counter App",
       theme: ThemeData(
         primarySwatch: Colors.teal,
+        textTheme: TextTheme(
+            headline1:
+                TextStyle(color: Colors.purple, fontWeight: FontWeight.bold)),
       ),
       home: MyHomePage(),
     );
@@ -45,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Text(
             _sayac.toString(),
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headline1,
           ),
         ],
       )),
