@@ -19,8 +19,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _sayac = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +44,18 @@ class MyHomePage extends StatelessWidget {
             style: TextStyle(fontSize: 24),
           ),
           Text(
-            "0",
+            _sayac.toString(),
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
         ],
       )),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: Icon(Icons.plus_one)),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _sayac++;
+            });
+          },
+          child: Icon(Icons.plus_one)),
     );
   }
 }
