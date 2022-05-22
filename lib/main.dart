@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:widgets/image_widgets.dart';
 import 'package:widgets/my_counter_page.dart';
 
 void main() {
@@ -18,7 +19,12 @@ class MyApp extends StatelessWidget {
             headline1:
                 TextStyle(color: Colors.purple, fontWeight: FontWeight.bold)),
       ),
-      home: MyCounterPage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Image Examples"),
+        ),
+        body: ImageExamples(),
+      ),
     );
   }
 }
