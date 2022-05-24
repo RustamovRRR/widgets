@@ -49,6 +49,12 @@ class ImageExamples extends StatelessWidget {
               ],
             ),
           ),
+          FadeInImage.assetNetwork(
+              fit: BoxFit.cover,
+              placeholder: "assets/images/loading.gif",
+              image:
+                  "https://www.007.com/wp-content/uploads/2020/07/007_WEBSITE_New-DB5-Production_LANDSCAPE.png"),
+          Expanded(child: Placeholder())
         ],
       ),
     );
