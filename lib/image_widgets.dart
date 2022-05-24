@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/button_widgets.dart';
 
 class ImageExamples extends StatelessWidget {
   const ImageExamples({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class ImageExamples extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ImageWidgets(),
+      child: ButtonWidgets(),
     );
   }
 }
