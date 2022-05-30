@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:widgets/DropDownButtonUse.dart';
-import 'package:widgets/image_widgets.dart';
-import 'package:widgets/my_counter_page.dart';
+import 'package:widgets/scrolls/CardListTileUse.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,15 +22,11 @@ class MyApp extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))))),
         textTheme: TextTheme(
-            headline1:
-                TextStyle(color: Colors.purple, fontWeight: FontWeight.bold)),
+            headline1: TextStyle(
+                color: Color.fromRGBO(156, 39, 176, 1),
+                fontWeight: FontWeight.bold)),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Image Examples"),
-        ),
-        body: DropDownButtonUse(),
-      ),
+      home: CardListTileUse(),
     );
   }
 }
