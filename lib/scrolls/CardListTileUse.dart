@@ -10,30 +10,49 @@ class CardListTileUse extends StatelessWidget {
         title: Text("CardListTile"),
       ),
       body: Center(
-        child: singleChildScrollUse(),
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+                tekListElemani(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
 
   SingleChildScrollView singleChildScrollUse() {
     return SingleChildScrollView(
-        child: Column(
-          children: [
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-            tekListElemani(),
-          ],
-        ),
-      );
+      child: Column(
+        children: [
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+          tekListElemani(),
+        ],
+      ),
+    );
   }
 
   Column tekListElemani() {
