@@ -14,15 +14,72 @@ class ListViewUse extends StatelessWidget {
       appBar: AppBar(
         title: Text("Telebe Listi"),
       ),
-      body: ListView(
-        children: butunTelebeler
-            .map((telebe) => ListTile(
-                  title: Text(telebe.name),
-                  leading: CircleAvatar(child: Text(telebe.id.toString())),
-                  trailing: Text(telebe.surname),
-                ))
-            .toList(),
-      ),
+      body: listViewSeparatedMethod(),
+    );
+  }
+
+  ListView listViewSeparatedMethod() {
+    return ListView.separated(
+      itemBuilder: (BuildContext context, int index) {
+        return Card(
+          color: index % 2 == 0
+              ? Colors.red.withOpacity(0.02)
+              : Colors.red.withOpacity(0.2),
+          child: ListTile(
+            onTap: () {
+              print("Element kliklendi $index");
+            },
+            title: Text(butunTelebeler[index].name),
+            leading:
+                CircleAvatar(child: Text(butunTelebeler[index].id.toString())),
+            trailing: Text(butunTelebeler[index].surname),
+          ),
+        );
+      },
+      itemCount: butunTelebeler.length,
+      separatorBuilder: (BuildContext context, int index) {
+        if ((index + 1) % 4 == 0) {
+          return Divider(
+            color: Colors.green.shade700,
+            thickness: 3,
+          );
+        }
+        return SizedBox();
+      },
+    );
+  }
+
+  ListView listViewBuilderMethod() {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        return Card(
+          color: index % 2 == 0
+              ? Colors.red.withOpacity(0.02)
+              : Colors.red.withOpacity(0.2),
+          child: ListTile(
+            onTap: () {
+              print("Element kliklendi $index");
+            },
+            title: Text(butunTelebeler[index].name),
+            leading:
+                CircleAvatar(child: Text(butunTelebeler[index].id.toString())),
+            trailing: Text(butunTelebeler[index].surname),
+          ),
+        );
+      },
+      itemCount: butunTelebeler.length,
+    );
+  }
+
+  ListView classicListView() {
+    return ListView(
+      children: butunTelebeler
+          .map((telebe) => ListTile(
+                title: Text(telebe.name),
+                leading: CircleAvatar(child: Text(telebe.id.toString())),
+                trailing: Text(telebe.surname),
+              ))
+          .toList(),
     );
   }
 }
