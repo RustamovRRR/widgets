@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:widgets/scrolls/CardListTileUse.dart';
+import 'package:widgets/scrolls/ListViewUse.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                 color: Color.fromRGBO(156, 39, 176, 1),
                 fontWeight: FontWeight.bold)),
       ),
-      home: CardListTileUse(),
+      home: ListViewUse(),
     );
   }
 }
