@@ -10,6 +10,13 @@ class CardListTileUse extends StatelessWidget {
         title: Text("CardListTile"),
       ),
       body: Center(
+        child: singleChildScrollUse(),
+      ),
+    );
+  }
+
+  SingleChildScrollView singleChildScrollUse() {
+    return SingleChildScrollView(
         child: Column(
           children: [
             tekListElemani(),
@@ -18,10 +25,15 @@ class CardListTileUse extends StatelessWidget {
             tekListElemani(),
             tekListElemani(),
             tekListElemani(),
+            tekListElemani(),
+            tekListElemani(),
+            tekListElemani(),
+            tekListElemani(),
+            tekListElemani(),
+            tekListElemani(),
           ],
         ),
-      ),
-    );
+      );
   }
 
   Column tekListElemani() {
