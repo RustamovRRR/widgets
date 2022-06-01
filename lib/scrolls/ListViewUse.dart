@@ -22,6 +22,7 @@ class ListViewUse extends StatelessWidget {
   ListView listViewSeparatedMethod() {
     return ListView.separated(
       itemBuilder: (BuildContext context, int index) {
+        var oAnkitelebe = butunTelebeler[index];
         return Card(
           color: index % 2 == 0
               ? Colors.red.withOpacity(0.02)
@@ -34,10 +35,12 @@ class ListViewUse extends StatelessWidget {
                   dismissOnTap: true,
                   toastPosition: EasyLoadingToastPosition.bottom);
             },
-            title: Text(butunTelebeler[index].name),
-            leading:
-                CircleAvatar(child: Text(butunTelebeler[index].id.toString())),
-            trailing: Text(butunTelebeler[index].surname),
+            onLongPress: () {
+              _alertDialogIsler(context, oAnkitelebe);
+            },
+            title: Text(oAnkitelebe.name),
+            leading: CircleAvatar(child: Text(oAnkitelebe.id.toString())),
+            trailing: Text(oAnkitelebe.surname),
           ),
         );
       },
@@ -87,6 +90,37 @@ class ListViewUse extends StatelessWidget {
           .toList(),
     );
   }
+
+  void _alertDialogIsler(BuildContext myContext, Telebe telebe1) {
+    showDialog(
+        barrierDismissible: false,
+        context: myContext,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(telebe1.toString()),
+            content: SingleChildScrollView(
+                child: ListBody(
+              children: [
+                Text("Test1" * 100),
+                Text("Test1" * 100),
+                Text("Test1" * 100),
+              ],
+            )),
+            actions: [
+              ButtonBar(
+                children: [
+                  TextButton(onPressed: () {}, child: Text("OK")),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text("Cancel")),
+                ],
+              )
+            ],
+          );
+        });
+  }
 }
 
 class Telebe {
@@ -95,4 +129,9 @@ class Telebe {
   final String surname;
 
   Telebe(this.id, this.name, this.surname);
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "Telebenin adi $name. Soyadi $surname id: $id";
+  }
 }
