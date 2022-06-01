@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class ListViewUse extends StatelessWidget {
   ListViewUse({Key? key}) : super(key: key);
@@ -28,6 +29,10 @@ class ListViewUse extends StatelessWidget {
           child: ListTile(
             onTap: () {
               print("Element kliklendi $index");
+              EasyLoading.showToast("Kliklendi",
+                  duration: Duration(seconds: 3),
+                  dismissOnTap: true,
+                  toastPosition: EasyLoadingToastPosition.bottom);
             },
             title: Text(butunTelebeler[index].name),
             leading:
