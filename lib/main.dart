@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:widgets/scrolls/ListViewUse.dart';
+import 'package:widgets/scrolls/listViewLayoutProblemi.dart';
 
 void main() {
   runApp(MyApp());
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
                 color: Color.fromRGBO(156, 39, 176, 1),
                 fontWeight: FontWeight.bold)),
       ),
-      home: ListViewUse(),
+      home: ListViewLayoutProblemi(),
       builder: EasyLoading.init(),
     );
   }
