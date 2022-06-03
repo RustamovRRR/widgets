@@ -12,11 +12,30 @@ class GridViewClass extends StatelessWidget {
       body: GridView.builder(
         itemCount: 100,
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
           return Container(
             alignment: Alignment.center,
-            color: Colors.teal[100 * (index % 9)],
+            // color: Colors.teal[100 * ((index + 1) % 8)],
+            decoration: BoxDecoration(
+                color: Colors.red[100 * ((index + 1) % 8)],
+                gradient: LinearGradient(
+                    colors: [Colors.green, Colors.grey],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight),
+                border: Border.all(
+                  color: Colors.black,
+                  style: BorderStyle.solid,
+                  width: 3,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(10, 20),
+                      blurRadius: 20)
+                ],
+                shape: BoxShape.circle),
+            margin: EdgeInsets.all(20),
             child: Text(
               'Test $index',
               textAlign: TextAlign.center,
