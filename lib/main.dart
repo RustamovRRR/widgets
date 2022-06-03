@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:widgets/scrolls/GridViewClass.dart';
 import 'package:widgets/scrolls/listViewLayoutProblemi.dart';
 
 void main() {
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
                 color: Color.fromRGBO(156, 39, 176, 1),
                 fontWeight: FontWeight.bold)),
       ),
-      home: ListViewLayoutProblemi(),
+      home: GridViewClass(),
       builder: EasyLoading.init(),
     );
   }
