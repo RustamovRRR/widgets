@@ -9,7 +9,21 @@ class GridViewClass extends StatelessWidget {
       appBar: AppBar(
         title: Text("GridView"),
       ),
-      body: gridViewExtent(),
+      body: GridView.builder(
+        itemCount: 100,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (context, index) {
+          return Container(
+            alignment: Alignment.center,
+            color: Colors.teal[100 * (index % 9)],
+            child: Text(
+              'Test $index',
+              textAlign: TextAlign.center,
+            ),
+          );
+        },
+      ),
     );
   }
 
