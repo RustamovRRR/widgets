@@ -9,7 +9,51 @@ class GridViewClass extends StatelessWidget {
       appBar: AppBar(
         title: Text("GridView"),
       ),
-      body: gridViewCount(),
+      body: gridViewExtent(),
+    );
+  }
+
+  GridView gridViewExtent() {
+    return GridView.extent(
+      maxCrossAxisExtent: 500,
+      primary: false,
+      padding: EdgeInsets.all(10),
+      crossAxisSpacing: 20,
+      mainAxisSpacing: 40,
+      children: [
+        Container(
+          alignment: Alignment.center,
+          color: Colors.teal.shade300,
+          child: Text(
+            'Hello',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.teal.shade300,
+          child: Text(
+            'Hello',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.teal.shade300,
+          child: Text(
+            'Hello',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.teal.shade300,
+          child: Text(
+            'Hello',
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
     );
   }
 
