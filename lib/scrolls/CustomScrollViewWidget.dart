@@ -38,6 +38,22 @@ class CustomScrollViewWidget extends StatelessWidget {
                 childCount: 3),
           ),
         ),
+        SliverPadding(
+          padding: EdgeInsets.all(10),
+          sliver: SliverFixedExtentList(
+              delegate: SliverChildListDelegate(
+                containersInSliverChildListDelegate,
+              ),
+              itemExtent: 300),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.all(20),
+          sliver: SliverFixedExtentList(
+              delegate: SliverChildBuilderDelegate(
+                  _dinamikElementYaradanFunksiya,
+                  childCount: 5),
+              itemExtent: 300),
+        ),
       ]),
     );
   }
