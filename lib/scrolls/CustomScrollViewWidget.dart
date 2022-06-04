@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 class CustomScrollViewWidget extends StatelessWidget {
@@ -27,6 +29,13 @@ class CustomScrollViewWidget extends StatelessWidget {
         SliverList(
           delegate: SliverChildListDelegate(
             containersInSliverChildListDelegate,
+          ),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.all(5),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(_dinamikElementYaradanFunksiya,
+                childCount: 3),
           ),
         ),
       ]),
@@ -121,4 +130,24 @@ class CustomScrollViewWidget extends StatelessWidget {
       ),
     ];
   }
+
+  Widget? _dinamikElementYaradanFunksiya(BuildContext context, int index) {
+    return Container(
+      height: 150,
+      color: _randomReng(),
+      alignment: Alignment.center,
+      child: Text(
+        "Dinamik list elementi ${index + 1}",
+        style: TextStyle(
+          fontSize: 24,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+Color _randomReng() {
+  return Color.fromARGB(255, math.Random().nextInt(255),
+      math.Random().nextInt(255), math.Random().nextInt(255));
 }
