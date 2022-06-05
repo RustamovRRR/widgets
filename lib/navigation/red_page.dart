@@ -9,32 +9,39 @@ class RedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Red Page"),
-        backgroundColor: Colors.red,
-        automaticallyImplyLeading: false,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              "Red Page",
-              style: TextStyle(fontSize: 24),
+    return WillPopScope(
+      onWillPop: () {
+        _ixtiyariEded = Random().nextInt(100);
+        Navigator.of(context).pop(_ixtiyariEded);
+        return Future.value(false);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Red Page"),
+          backgroundColor: Colors.red,
+          // automaticallyImplyLeading: false,
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Text(
+                "Red Page",
+                style: TextStyle(fontSize: 24),
+              ),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              _ixtiyariEded = Random().nextInt(100);
-              Navigator.pop(context, _ixtiyariEded);
-              // print(_ixtiyariEded);
-            },
-            child: Text("Back"),
-            style: ElevatedButton.styleFrom(
-                alignment: Alignment.center, primary: Colors.red),
-          )
-        ],
+            ElevatedButton(
+              onPressed: () {
+                _ixtiyariEded = Random().nextInt(100);
+                Navigator.pop(context, _ixtiyariEded);
+                // print(_ixtiyariEded);
+              },
+              child: Text("Back"),
+              style: ElevatedButton.styleFrom(
+                  alignment: Alignment.center, primary: Colors.red),
+            )
+          ],
+        ),
       ),
     );
   }
