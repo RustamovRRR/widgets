@@ -26,9 +26,10 @@ class AnaSehife extends StatelessWidget {
       body: Center(
         child: Column(children: [
           ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
+            onPressed: () async {
+              int? _result = await Navigator.push<int>(context,
                   CupertinoPageRoute(builder: (redContex) => RedPage()));
+              print("Red pageden gelen eded: $_result");
             },
             child: Text("GO to Red Page IOS"),
             style: ElevatedButton.styleFrom(
@@ -39,7 +40,9 @@ class AnaSehife extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (redContext) => RedPage()));
+                  .push<int>(
+                      MaterialPageRoute(builder: (redContext) => RedPage()))
+                  .then((value) => print("Android geri donen eded: $value"));
             },
             child: Text("GO to Red Page Android"),
             style: ElevatedButton.styleFrom(
