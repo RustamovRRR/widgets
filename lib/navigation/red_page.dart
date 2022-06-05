@@ -39,7 +39,31 @@ class RedPage extends StatelessWidget {
               child: Text("Back"),
               style: ElevatedButton.styleFrom(
                   alignment: Alignment.center, primary: Colors.red),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).maybePop();
+              },
+              child: Text("MaybePop use"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                alignment: Alignment.center,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (Navigator.of(context).canPop()) {
+                  print("pop ola biler");
+                } else {
+                  print("pop ola bilmez");
+                }
+              },
+              child: Text("CanPop use"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                alignment: Alignment.center,
+              ),
+            ),
           ],
         ),
       ),

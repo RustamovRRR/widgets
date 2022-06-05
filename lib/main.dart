@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets/navigation/green_page.dart';
 import 'package:widgets/navigation/red_page.dart';
 
 void main() => runApp(MyApp());
@@ -47,6 +48,41 @@ class AnaSehife extends StatelessWidget {
             child: Text("GO to Red Page Android"),
             style: ElevatedButton.styleFrom(
               primary: Colors.red,
+              alignment: Alignment.center,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.maybeOf(context);
+            },
+            child: Text("MaybePop use"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red,
+              alignment: Alignment.center,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (Navigator.of(context).canPop()) {
+                print("pop ola biler");
+              } else {
+                print("pop ola bilmez");
+              }
+            },
+            child: Text("CanPop use"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red,
+              alignment: Alignment.center,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (contex) => GreenPage()));
+            },
+            child: Text("Push replacement"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.green,
               alignment: Alignment.center,
             ),
           ),
