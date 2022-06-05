@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets/navigation/red_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,21 +9,49 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      home: AnaSehife(),
     );
   }
 }
 
+class AnaSehife extends StatelessWidget {
+  const AnaSehife({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Navigation'),
+      ),
+      body: Center(
+        child: Column(children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (redContex) => RedPage()));
+            },
+            child: Text("GO to Red Page IOS"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red,
+              alignment: Alignment.center,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (redContext) => RedPage()));
+            },
+            child: Text("GO to Red Page Android"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red,
+              alignment: Alignment.center,
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
+}
 
 // import "package:flutter/material.dart";
 // import 'package:flutter_easyloading/flutter_easyloading.dart';
