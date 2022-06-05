@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:widgets/navigation/green_page.dart';
 import 'package:widgets/navigation/orange_page.dart';
 import 'package:widgets/navigation/red_page.dart';
+import 'package:widgets/navigation/route_generator.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,13 +12,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: AnaSehife(),
-      routes: {
-        '/redPage': (context) => RedPage(),
-        '/orangePage': (context) => OrangePage(),
-      },
-      onUnknownRoute: (settings) =>
-          MaterialPageRoute(builder: (context) => AnaSehife()),
+      // home: AnaSehife(),
+      // routes: {
+      //   '/redPage': (context) => RedPage(),
+      //   '/orangePage': (context) => OrangePage(),
+      // },
+      // onUnknownRoute: (settings) =>
+      //     MaterialPageRoute(builder: (context) => AnaSehife()),
+      onGenerateRoute: RouteGenerator.routeGenerator,
     );
   }
 }
