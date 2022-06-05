@@ -105,6 +105,16 @@ class AnaSehife extends StatelessWidget {
               alignment: Alignment.center,
             ),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed('/telebeListi',arguments: 60);
+            },
+            child: Text("List yarat"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.orange,
+              alignment: Alignment.center,
+            ),
+          ),
         ]),
       ),
     );
