@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets/main.dart';
 import 'package:widgets/navigation/red_page.dart';
+import 'package:widgets/navigation/telebe_detay.dart';
 import 'package:widgets/navigation/telebe_listi.dart';
 
 class RouteGenerator {
@@ -27,6 +28,10 @@ class RouteGenerator {
 
       case '/telebeListi':
         return _routeYarat(TelebeListi(), settings);
+      case '/telebeDetay':
+        var parametredekiTelebe = settings.arguments as Telebe;
+        return _routeYarat(
+            TelebeDetay(secilenTelebe: parametredekiTelebe), settings);
 
       default:
         return MaterialPageRoute(

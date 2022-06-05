@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/navigation/telebe_detay.dart';
 
 class TelebeListi extends StatelessWidget {
   const TelebeListi({Key? key}) : super(key: key);
@@ -18,6 +19,11 @@ class TelebeListi extends StatelessWidget {
       body: ListView.builder(
           itemBuilder: (context, index) {
             return ListTile(
+              onTap: () {
+                var secilenTelebe = butunTelebeler[index];
+                Navigator.pushNamed(context, '/telebeDetay',
+                    arguments: secilenTelebe);
+              },
               leading: CircleAvatar(
                 child: Text(
                   butunTelebeler[index].id.toString(),
