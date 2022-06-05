@@ -76,11 +76,11 @@ class RedPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/orangePage1');
+                Navigator.pushNamed(context, '/purplePage');
               },
-              child: Text("Orange Page"),
+              child: Text("Purple Page"),
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
+                primary: Colors.purple,
                 alignment: Alignment.center,
               ),
             ),

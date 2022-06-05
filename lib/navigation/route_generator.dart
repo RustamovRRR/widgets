@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets/main.dart';
+import 'package:widgets/navigation/purple_page.dart';
 import 'package:widgets/navigation/red_page.dart';
 import 'package:widgets/navigation/telebe_detay.dart';
 import 'package:widgets/navigation/telebe_listi.dart';
@@ -25,6 +26,8 @@ class RouteGenerator {
 
       case '/redPage':
         return _routeYarat(RedPage(), settings);
+      case '/purplePage':
+        return _routeYarat(PurplePage(), settings);
 
       case '/telebeListi':
         return _routeYarat(TelebeListi(), settings);
