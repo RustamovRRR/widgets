@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets/navigation/green_page.dart';
+import 'package:widgets/navigation/orange_page.dart';
 import 'package:widgets/navigation/red_page.dart';
 
 void main() => runApp(MyApp());
@@ -11,6 +12,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: AnaSehife(),
+      routes: {
+        '/redPage': (context) => RedPage(),
+        '/orangePage': (context) => OrangePage(),
+      },
+      onUnknownRoute: (settings) =>
+          MaterialPageRoute(builder: (context) => AnaSehife()),
     );
   }
 }
@@ -83,6 +90,16 @@ class AnaSehife extends StatelessWidget {
             child: Text("Push replacement"),
             style: ElevatedButton.styleFrom(
               primary: Colors.green,
+              alignment: Alignment.center,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/redPage');
+            },
+            child: Text("PushNamed"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blue,
               alignment: Alignment.center,
             ),
           ),

@@ -64,6 +64,26 @@ class RedPage extends StatelessWidget {
                 alignment: Alignment.center,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/orangePage');
+              },
+              child: Text("Orange Page"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orange,
+                alignment: Alignment.center,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/orangePage1');
+              },
+              child: Text("Orange Page"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orange,
+                alignment: Alignment.center,
+              ),
+            ),
           ],
         ),
       ),
