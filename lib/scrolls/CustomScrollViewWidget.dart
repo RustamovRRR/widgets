@@ -31,29 +31,57 @@ class CustomScrollViewWidget extends StatelessWidget {
             containersInSliverChildListDelegate,
           ),
         ),
-        SliverPadding(
-          padding: EdgeInsets.all(5),
-          sliver: SliverList(
+        // SliverPadding(
+        //   padding: EdgeInsets.all(5),
+        //   sliver: SliverList(
+        //     delegate: SliverChildBuilderDelegate(_dinamikElementYaradanFunksiya,
+        //         childCount: 3),
+        //   ),
+        // ),
+        // SliverPadding(
+        //   padding: EdgeInsets.all(10),
+        //   sliver: SliverFixedExtentList(
+        //       delegate: SliverChildListDelegate(
+        //         containersInSliverChildListDelegate,
+        //       ),
+        //       itemExtent: 300),
+        // ),
+        // SliverPadding(
+        //   padding: EdgeInsets.all(20),
+        //   sliver: SliverFixedExtentList(
+        //       delegate: SliverChildBuilderDelegate(
+        //           _dinamikElementYaradanFunksiya,
+        //           childCount: 5),
+        //       itemExtent: 300),
+        // ),
+        SliverGrid(
+            delegate:
+                SliverChildListDelegate(containersInSliverChildListDelegate),
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3)),
+        SliverGrid(
             delegate: SliverChildBuilderDelegate(_dinamikElementYaradanFunksiya,
-                childCount: 3),
-          ),
+                childCount: 6),
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2)),
+        SliverGrid(
+            delegate:
+                SliverChildListDelegate(containersInSliverChildListDelegate),
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 100)),
+        SliverGrid(
+            delegate: SliverChildBuilderDelegate(_dinamikElementYaradanFunksiya,
+                childCount: 5),
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200)),
+        SliverGrid.count(
+          crossAxisCount: 5,
+          children: containersInSliverChildListDelegate,
         ),
-        SliverPadding(
-          padding: EdgeInsets.all(10),
-          sliver: SliverFixedExtentList(
-              delegate: SliverChildListDelegate(
-                containersInSliverChildListDelegate,
-              ),
-              itemExtent: 300),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.all(20),
-          sliver: SliverFixedExtentList(
-              delegate: SliverChildBuilderDelegate(
-                  _dinamikElementYaradanFunksiya,
-                  childCount: 5),
-              itemExtent: 300),
-        ),
+        SliverGrid.extent(
+          maxCrossAxisExtent: 300,
+          children: containersInSliverChildListDelegate,
+        )
       ]),
     );
   }
